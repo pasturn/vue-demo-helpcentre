@@ -5,8 +5,9 @@
     <div class="bar bar-header-secondary">
         <search :search.sync="keyword"></search>
     </div>
-    <div class="content" data-distance="100" >
-            <content  :keyword ="keywords"></content>
+    <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100" >
+        <content  :keyword ="keywords"></content>
+        <!-- 加载提示符 -->
     </div>
 </template>
 

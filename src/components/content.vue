@@ -2,22 +2,16 @@
     <div class="content-block-title">相关问题</div>
     <div class="list-block" id="help-list">
         <ul class="list-container">
-            <li v-for="faq in faqs | filterBy keyword in 'q' 'a'" >
-                <a href="" class=" item-link">
-                    <div class="item-content">
-                        <div class="item-inner">
-                            <div class="item-title" v-html="faq.q | highLight keyword"></div>
-                        </div>
-                    </div>
-                </a>
+            <li class="item-content item-link" v-for="faq in faqs | filterBy keyword in 'q' 'a'" >
+
+                <div class="item-inner">
+                    <div class="item-title" v-html="faq.q | highLight keyword"></div>
+                </div>
                 <!--<div class="well">-->
                 <!--<small v-html="faq.a | highLight keyword" ></small>-->
                 <!--</div>-->
             </li>
         </ul>
-    </div>
-    <div class="content-block-inner">
-        <p v-html="faqs.a"></p>
     </div>
 </template>
 <script>

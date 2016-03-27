@@ -5,8 +5,7 @@ var VueResource = require('vue-resource');
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-require('./css/framework7.ios.min.css);
-
+require('./css/sm.css');
 
 Vue.filter('highLight',
     function(value,input){
