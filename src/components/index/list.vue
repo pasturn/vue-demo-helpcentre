@@ -17,7 +17,7 @@
         </ul>
     </div>
     <div class="content-block-inner">
-        <p v-html="faqs.a"></p>
+        <p></p>
     </div>
 </template>
 <script>

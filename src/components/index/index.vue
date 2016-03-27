@@ -6,7 +6,7 @@
         <search :search.sync="keyword"></search>
     </div>
     <div class="content infinite-scroll infinite-scroll-bottom">
-        <content  :keyword ="keywords"></content>
+        <list  :keyword ="keywords"></list>
         <!-- 加载提示符 -->
     </div>
 </template>
@@ -14,9 +14,9 @@
 <script>
     export default {
         components : {
-            'bar-nav' : require("./components/header.vue"),
-            'search' : require("./components/search.vue"),
-            'content' : require("./components/content.vue")
+            'bar-nav' : require("./../common/header.vue"),
+            'search' : require("./search.vue"),
+            'list' : require("./list.vue")
         },
         data : function(){
             return {
