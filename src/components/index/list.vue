@@ -1,23 +1,19 @@
 <template>
-    <div class="content-block-title">相关问题</div>
-    <div class="list-block" id="help-list">
-        <ul class="list-container">
-            <li v-for="faq in faqs | filterBy keyword in 'q' 'a'" >
-                <a href="" class=" item-link">
-                    <div class="item-content">
-                        <div class="item-inner">
-                            <div class="item-title" v-html="faq.q | highLight keyword"></div>
+
+        <div class="content-block-title">相关问题</div>
+        <div class="list-block" id="help-list">
+            <ul class="list-container">
+                <li v-for="faq in faqs | filterBy keyword in 'q' 'a'">
+                    <a v-link="{ path: '/detail' }" v-on:click="answer(faq.q,faq.a)" class=" item-link">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" v-html="faq.q | highLight keyword"></div>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <!--<div class="well">-->
-                <!--<small v-html="faq.a | highLight keyword" ></small>-->
-                <!--</div>-->
-            </li>
-        </ul>
-    </div>
-    <div class="content-block-inner">
-        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -28,9 +24,9 @@
                 'faqs' : ''
             }
         },
-        ready:function(){
+        ready : function(){
 
-            // GET request
+            // GET reques
             this.$http.get('./data/faq.json', function (data, status, request) {
                 var faqData = data;
                 // set data on vm
@@ -40,8 +36,11 @@
                 return "Data Error";
                 // handle error
             })
-
+        },
+        methods : {
+            answer: function (title,answer) {
+                this.$dispatch('answerpage',{'title':title,'answer':answer});
+            }
         }
-
     }
 </script>

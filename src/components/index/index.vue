@@ -1,25 +1,20 @@
 <template>
-    <header class="bar bar-nav">
-        <bar-nav></bar-nav>
-    </header>
     <div class="bar bar-header-secondary">
-        <search :search.sync="keyword"></search>
+        <search :search.sync ="keyword"></search>
     </div>
     <div class="content infinite-scroll infinite-scroll-bottom">
-        <list  :keyword ="keywords"></list>
-        <!-- 加载提示符 -->
+        <list  :keyword.sync ="keywords"></list>
     </div>
 </template>
-
 <script>
     export default {
         components : {
-            'bar-nav' : require("./../common/header.vue"),
             'search' : require("./search.vue"),
             'list' : require("./list.vue")
         },
         data : function(){
             return {
+                answer:'',
                 keyword:''
             }
         },
@@ -28,5 +23,5 @@
                 return this.keyword
             }
         }
-    };
+    }
 </script>
