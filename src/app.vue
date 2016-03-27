@@ -5,7 +5,7 @@
     <div class="bar bar-header-secondary">
         <search :search.sync="keyword"></search>
     </div>
-    <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100" >
+    <div class="content infinite-scroll infinite-scroll-bottom">
         <content  :keyword ="keywords"></content>
         <!-- 加载提示符 -->
     </div>

@@ -13015,7 +13015,7 @@
 	//     <div class="bar bar-header-secondary">
 	//         <search :search.sync="keyword"></search>
 	//     </div>
-	//     <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100" >
+	//     <div class="content infinite-scroll infinite-scroll-bottom">
 	//         <content  :keyword ="keywords"></content>
 	//         <!-- 加载提示符 -->
 	//     </div>
@@ -13102,7 +13102,7 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "\n    <header class=\"bar bar-nav\">\n        <bar-nav></bar-nav>\n    </header>\n    <div class=\"bar bar-header-secondary\">\n        <search :search.sync=\"keyword\"></search>\n    </div>\n    <div class=\"content infinite-scroll infinite-scroll-bottom\" data-distance=\"100\" >\n        <content  :keyword =\"keywords\"></content>\n        <!-- 加载提示符 -->\n    </div>\n";
+	module.exports = "\n    <header class=\"bar bar-nav\">\n        <bar-nav></bar-nav>\n    </header>\n    <div class=\"bar bar-header-secondary\">\n        <search :search.sync=\"keyword\"></search>\n    </div>\n    <div class=\"content infinite-scroll infinite-scroll-bottom\">\n        <content  :keyword =\"keywords\"></content>\n        <!-- 加载提示符 -->\n    </div>\n";
 
 /***/ },
 /* 15 */
@@ -14754,7 +14754,7 @@
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "\n    <div class=\"content-block-title\">相关问题</div>\n    <div class=\"list-block\" id=\"help-list\">\n        <ul class=\"list-container\">\n            <li class=\"item-content item-link\" v-for=\"faq in faqs | filterBy keyword in 'q' 'a'\" >\n\n                <div class=\"item-inner\">\n                    <div class=\"item-title\" v-html=\"faq.q | highLight keyword\"></div>\n                </div>\n                <!--<div class=\"well\">-->\n                <!--<small v-html=\"faq.a | highLight keyword\" ></small>-->\n                <!--</div>-->\n            </li>\n        </ul>\n    </div>\n";
+	module.exports = "\n    <div class=\"content-block-title\">相关问题</div>\n    <div class=\"list-block\" id=\"help-list\">\n        <ul class=\"list-container\">\n            <li v-for=\"faq in faqs | filterBy keyword in 'q' 'a'\" >\n                <a href=\"\" class=\" item-link\">\n                    <div class=\"item-content\">\n                        <div class=\"item-inner\">\n                            <div class=\"item-title\" v-html=\"faq.q | highLight keyword\"></div>\n                        </div>\n                    </div>\n                </a>\n                <!--<div class=\"well\">-->\n                <!--<small v-html=\"faq.a | highLight keyword\" ></small>-->\n                <!--</div>-->\n            </li>\n        </ul>\n    </div>\n    <div class=\"content-block-inner\">\n        <p v-html=\"faqs.a\"></p>\n    </div>\n";
 
 /***/ },
 /* 41 */
@@ -14769,16 +14769,22 @@
 	//     <div class="content-block-title">相关问题</div>
 	//     <div class="list-block" id="help-list">
 	//         <ul class="list-container">
-	//             <li class="item-content item-link" v-for="faq in faqs | filterBy keyword in 'q' 'a'" >
-	//
-	//                 <div class="item-inner">
-	//                     <div class="item-title" v-html="faq.q | highLight keyword"></div>
-	//                 </div>
+	//             <li v-for="faq in faqs | filterBy keyword in 'q' 'a'" >
+	//                 <a href="" class=" item-link">
+	//                     <div class="item-content">
+	//                         <div class="item-inner">
+	//                             <div class="item-title" v-html="faq.q | highLight keyword"></div>
+	//                         </div>
+	//                     </div>
+	//                 </a>
 	//                 <!--<div class="well">-->
 	//                 <!--<small v-html="faq.a | highLight keyword" ></small>-->
 	//                 <!--</div>-->
 	//             </li>
 	//         </ul>
+	//     </div>
+	//     <div class="content-block-inner">
+	//         <p v-html="faqs.a"></p>
 	//     </div>
 	// </template>
 	// <script>
