@@ -1,24 +1,14 @@
 <template>
-    <header class="bar bar-nav">
-        <bar-nav></bar-nav>
-    </header>
-
+    <div class="content">
+        <div class="content-block">
+            <h3 v-text="pageanswer.title"></h3>
+            <p v-html="pageanswer.answer"></p>
+        </div>
+    </div>
 </template>
 
 <script>
     export default {
-        components : {
-            'bar-nav' : require("./../common/header.vue"),
-        },
-        data : function(){
-            return {
-                keyword:''
-            }
-        },
-        computed : {
-            keywords : function(){
-                return this.keyword
-            }
-        }
-    };
+        props:['pageanswer']
+    }
 </script>
