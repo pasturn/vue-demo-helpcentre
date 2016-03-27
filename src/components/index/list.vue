@@ -1,5 +1,4 @@
 <template>
-
         <div class="content-block-title">相关问题</div>
         <div class="list-block" id="help-list">
             <ul class="list-container">
